@@ -1,15 +1,20 @@
 <?php
+    // Logic
     $name = "New Student";
-    echo "<h1>Hello $name! Welcome to PHP </h1>";
+    $posts = ['wordpress is the life', 'whatsup bro how r u?', 'tomorrow is friday!!!'];
     echo "<p> The time now is: >" .date("H:i:s") . "</p>";
 ?>
 
-<?php
-    $posts = ['wordpress is the life', 'whatsup bro how r u?', 'tomorrow is friday!!!'];
+<h1>Hello <?php echo $name; ?>!</h1>
 
-    echo "<ul>";
-    foreach ($posts as $post) {
-        echo "<li>$post</li>";
-    }
-    echo "</ul>"
-?>
+<?php if (!empty($posts)): ?>
+    <ul>
+        <?php foreach ($posts as $post): ?>
+            <li style="color: blue;">
+                <?php echo $post?>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+<?php else: ?>
+<p>no posts in array</p>
+<?php endif; ?>
